@@ -1,0 +1,334 @@
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-image: url('../static/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.book-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.book-item img:hover {
+    transform: scale(1.05);
+}
+
+.book-item h3 {
+    margin-top: 10px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Login Form Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+}
+
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Page Controls */
+.page-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.page-controls button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.page-controls button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    .book-list {
+        grid-template-columns: 1fr;
+    }
+
+    .login-container {
+        padding: 20px;
+    }
+
+    .navbar a {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 600px) {
+    .book-item {
+        width: 45%;
+    }
+}
+
+@media (min-width: 900px) {
+    .book-item {
+        width: 30%;
+    }
+}
+
+/* Button Styles */
+#read-aloud-btn {
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#read-aloud-btn:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+#read-aloud-btn i {
+    margin-right: 8px;
+}
+
+#read-aloud-btn:active {
+    background-color: #004085;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+}
+
+#read-aloud-btn:focus {
+    outline: 3px solid #80bdff;
+    outline-offset: 2px;
+}
+
+/* Checkbox Toggle */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 65px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    border-radius: 50%;
+    transition: left 0.3s ease;
+}
+
+[type="checkbox"]:checked + label:before {
+    background-color: #1059FF;
+}
+
+[type="checkbox"]:checked + label:after {
+    left: 45px;
+}
+
+/* Button Animations */
+.btn-animate {
+    text-align: center;
+}
+
+.btn-signin, .btn-signup {
+    background: #1059FF;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-signin:hover, .btn-signup:hover {
+    background: #0b47c6;
+}
+
+/* Forgot Password */
+.forgot {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.forgot a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.forgot a:hover {
+    color: #1059FF;
+}
+
+/* Profile Section */
+.cover-photo {
+    height: 150px;
+    background: url('https://dl.dropboxusercontent.com/u/22006283/preview/codepen/profile-sky-clouds.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin: -50px auto 10px;
+    background: url('https://dl.dropboxusercontent.com/u/22006283/preview/codepen/profile-boy.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.welcome {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.btn-goback {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    background: #1059FF;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 300;
+    transition: background 0.3s ease;
+}
+
+.btn-goback:hover {
+    background: #0b47c6;
+}
+
+/* Refresh Icon */
+.refreshicon {
+    fill: #ffffff;
+    cursor: pointer;
+    transition: fill 0.3s ease;
+}
+
+.refreshicon:hover {
+    fill: #1059FF;
+}
+
